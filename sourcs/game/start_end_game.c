@@ -6,7 +6,7 @@
 /*   By: wwallas- <wwallas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 18:23:54 by wwallas-          #+#    #+#             */
-/*   Updated: 2022/07/27 21:53:36 by wwallas-         ###   ########.fr       */
+/*   Updated: 2022/07/28 00:08:58 by wwallas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,6 @@ void	start_end_game(t_data *data)
 			mlx_put_image_to_window(data->mlx, data->win, data->portal1, x, y);
 	}
 	verif_end(data);
-	atualize_portal(data);
 }
 
 void	verif_end(t_data *data)

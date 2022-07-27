@@ -6,7 +6,7 @@
 /*   By: wwallas- <wwallas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 15:56:07 by wwallas-          #+#    #+#             */
-/*   Updated: 2022/07/27 21:43:54 by wwallas-         ###   ########.fr       */
+/*   Updated: 2022/07/28 00:33:23 by wwallas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,11 @@ int	draw_map_time(t_data *data)
 		draw_movies(data);
 		if (j > 1)
 		{
+			atualize_portal(data);
 			atualize_host(data);
 			draw_map(data);
 			draw_movies(data);
+			j = 0;
 		}
 		time = 0;
 	}

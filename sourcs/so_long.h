@@ -6,7 +6,7 @@
 /*   By: wwallas- <wwallas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 23:25:37 by wwallas-          #+#    #+#             */
-/*   Updated: 2022/07/27 21:54:15 by wwallas-         ###   ########.fr       */
+/*   Updated: 2022/07/28 00:06:42 by wwallas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -145,5 +145,7 @@ void	put_img(t_data *data, void *img, int x, int y);
 void	draw_movies_aux(t_data *data, int nb, int position);
 
 int		del_map(char **map);
+
+void	atualize_portal(t_data *data);
 
 #endif
