@@ -6,7 +6,7 @@
 /*   By: wwallas- <wwallas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 20:49:35 by wwallas-          #+#    #+#             */
-/*   Updated: 2022/07/27 16:59:01 by wwallas-         ###   ########.fr       */
+/*   Updated: 2022/07/27 21:49:57 by wwallas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ void	move_down(t_data *data, int index)
 
 	x = data->enemies[index][0];
 	y = data->enemies[index][1];
-	if (data->map[y + 1][x] != '1' && data->map[y + 1][x] != 'C')
+	if (data->map[y + 1][x] != '1' && data->map[y + 1][x] != 'C' &&
+		data->map[y + 1][x] != 'A')
 	{
 		if (data->map[y + 1][x] == 'P')
 			close_game(data);
@@ -44,7 +45,8 @@ void	move_right(t_data *data, int index)
 
 	x = data->enemies[index][0];
 	y = data->enemies[index][1];
-	if (data->map[y][x + 1] != '1' && data->map[y][x + 1] != 'C')
+	if (data->map[y][x + 1] != '1' && data->map[y][x + 1] != 'C' &&
+		data->map[y][x + 1] != 'A')
 	{
 		if (data->map[y][x + 1] == 'P')
 			close_game(data);
@@ -64,7 +66,8 @@ void	move_up(t_data *data, int index)
 
 	x = data->enemies[index][0];
 	y = data->enemies[index][1];
-	if (data->map[y - 1][x] != '1' && data->map[y - 1][x] != 'C')
+	if (data->map[y - 1][x] != '1' && data->map[y - 1][x] != 'C' &&
+		data->map[y - 1][x] != 'A')
 	{
 		if (data->map[y - 1][x] == 'P')
 			close_game(data);
@@ -84,7 +87,8 @@ void	move_left(t_data *data, int index)
 
 	x = data->enemies[index][0];
 	y = data->enemies[index][1];
-	if (data->map[y][x - 1] != '1' && data->map[y][x - 1] != 'C')
+	if (data->map[y][x - 1] != '1' && data->map[y][x - 1] != 'C' &&
+		data->map[y][x - 1] != 'A')
 	{
 		if (data->map[y][x - 1] == 'P')
 			close_game(data);

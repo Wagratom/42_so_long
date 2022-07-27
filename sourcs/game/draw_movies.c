@@ -6,7 +6,7 @@
 /*   By: wwallas- <wwallas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 15:42:53 by wwallas-          #+#    #+#             */
-/*   Updated: 2022/07/26 22:51:56 by wwallas-         ###   ########.fr       */
+/*   Updated: 2022/07/27 20:16:59 by wwallas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 void	draw_movies(t_data *data)
 {
 	int	temp;
-	int	temp1;
 	int	position;
 
 	position = numb_house(data->movements, 10);
@@ -23,8 +22,7 @@ void	draw_movies(t_data *data)
 	while (temp)
 	{
 		position--;
-		temp1 = temp % 10;
-		draw_movies_aux(data, temp1, position);
+		draw_movies_aux(data, temp % 10, position);
 		temp /= 10;
 	}
 }

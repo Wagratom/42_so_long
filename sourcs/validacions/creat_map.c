@@ -6,7 +6,7 @@
 /*   By: wwallas- <wwallas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 04:31:03 by wwallas-          #+#    #+#             */
-/*   Updated: 2022/07/27 17:13:01 by wwallas-         ###   ########.fr       */
+/*   Updated: 2022/07/27 19:59:10 by wwallas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,23 @@ static int	valid_colun(char **map, int x, int y)
 	i = -1;
 	while (map[0][++i] && map[0] && i < x)
 	{
-		if (map[0][i] != '1')
-			return (write(1, "Erro: fist colun invalid\n", 26));
-		if (i > 26)
-			return (write(1, "invalid size map\n", 17));
+		if (map[0][i] != '1' || i > 26)
+		{
+			if (map[0][i] != '1')
+				write(1, "Erro: fist colun invalid\n", 26);
+			else
+				write(1, "invalid size map\n", 17);
+			return (del_map(map));
+		}
 	}
 	i = -1;
 	while (map[y][++i])
 	{
 		if (map[y][i] != '1')
-			return (write(1, "Erro: last colun invalid\n", 26));
+		{
+			write(1, "Erro: last colun invalid\n", 26);
+			return (del_map(map));
+		}
 	}
 	return (0);
 }
@@ -42,16 +49,23 @@ static int	valid_line(char **map, int x, int y)
 	i = -1;
 	while (i++ < y && map[i][0])
 	{
-		if (map[i][0] != '1')
-			return (write(1, "Erro: fist line invalid\n", 24));
-		if (i > 9)
-			return (write(1, "invalid size map\n", 17));
+		if (map[i][0] != '1' || i > 9)
+		{
+			if (map[i][0] != '1')
+				write(1, "Erro: fist line invalid\n", 24);
+			else
+				write(1, "invalid size map\n", 17);
+			return (del_map(map));
+		}
 	}
 	i = -1;
 	while (i++ < y && map[i][x])
 	{
 		if (map[i][x] != '1')
-			return (write(1, "Erro:	last line invalid\n", 24));
+		{
+			write(1, "Erro:	last line invalid\n", 24);
+			return (del_map(map));
+		}
 	}
 	return (0);
 }

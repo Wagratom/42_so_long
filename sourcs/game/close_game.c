@@ -6,7 +6,7 @@
 /*   By: wwallas- <wwallas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 17:32:17 by wwallas-          #+#    #+#             */
-/*   Updated: 2022/07/26 22:49:25 by wwallas-         ###   ########.fr       */
+/*   Updated: 2022/07/27 19:57:03 by wwallas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	del_array(int **array)
 	free(array);
 }
 
-void	del_map(char **map)
+int	del_map(char **map)
 {
 	int	y;
 
@@ -33,6 +33,7 @@ void	del_map(char **map)
 	while (map[++y])
 		free(map[y]);
 	free(map);
+	return (1);
 }
 
 int	close_game(t_data *data)

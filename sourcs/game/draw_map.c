@@ -6,7 +6,7 @@
 /*   By: wwallas- <wwallas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 15:56:07 by wwallas-          #+#    #+#             */
-/*   Updated: 2022/07/26 22:48:10 by wwallas-         ###   ########.fr       */
+/*   Updated: 2022/07/27 21:43:54 by wwallas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,14 @@ int	draw_map_time(t_data *data)
 	time++;
 	if (time > 20000)
 	{
+		j++;
 		draw_map(data);
 		draw_movies(data);
-		j++;
 		if (j > 1)
 		{
 			atualize_host(data);
+			draw_map(data);
 			draw_movies(data);
-			j = 0;
 		}
 		time = 0;
 	}
@@ -45,8 +45,6 @@ int	draw_map(t_data *data)
 	int	x;
 
 	mlx_put_image_to_window(data->mlx, data->win, data->background, 0, 0);
-	if (data->itens.collectible == 0)
-		animacion_end(data, data->itens.size_x * 14, data->itens.size_y * 20);
 	y = -1;
 	while (data->map[++y])
 	{

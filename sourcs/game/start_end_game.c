@@ -6,25 +6,26 @@
 /*   By: wwallas- <wwallas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 18:23:54 by wwallas-          #+#    #+#             */
-/*   Updated: 2022/07/26 22:49:52 by wwallas-         ###   ########.fr       */
+/*   Updated: 2022/07/27 21:53:36 by wwallas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
+void	verif_end(t_data *data);
+
 void	animacion_end(t_data *data, int x, int y)
 {
-	static int	time = 3000;
+	static int	time = 0;
 	int			i;
 
-	time++;
-	if (time > 3000)
+	if (time == 0)
 	{
 		i = 0;
-		while (i++ <= 10000)
+		while (i++ <= 100000)
 			mlx_put_image_to_window(data->mlx, data->win, data->end, x, y);
-		time = 0;
 	}
+	time++;
 }
 
 void	atualize_portal(t_data *data)
@@ -58,5 +59,20 @@ void	start_end_game(t_data *data)
 		else
 			mlx_put_image_to_window(data->mlx, data->win, data->portal1, x, y);
 	}
+	verif_end(data);
 	atualize_portal(data);
+}
+
+void	verif_end(t_data *data)
+{
+	int	index;
+
+	index = -1;
+	animacion_end(data, data->itens.size_x * 14, data->itens.size_y * 20);
+	while (data->exits[++index])
+	{
+		if (data->exits[index][0] == data->localization[0] &&
+			data->exits[index][1] == data->localization[1])
+			close_game(data);
+	}
 }
