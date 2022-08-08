@@ -6,15 +6,11 @@
 #    By: wwallas- <wwallas-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/19 21:38:45 by wwallas-          #+#    #+#              #
-#    Updated: 2022/08/08 17:43:01 by wwallas-         ###   ########.fr        #
+#    Updated: 2022/08/08 18:09:17 by wwallas-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-LIBFT_PATH			=	./libft
-LIBFT				=	$(LIBFT_PATH)/libft.a
-
-MLIBX_PATH			=	./minilibx
-MLIBX				=	$(MLIBX_PATH)/libmlx_Linux.a
+MLIBX				=	./minilibx/libmlx_Linux.a
 
 INCLUDES			=	-I. -Imlx_linux -O3
 
@@ -51,12 +47,12 @@ $(OBJS_DIR):
 							mkdir -p $@
 
 init:
-							$(MAKE) -C $(MLIBX_PATH)
-							$(MAKE) -C $(LIBFT_PATH)
+							$(MAKE) -C ./minilibx
+							$(MAKE) -C ./libft
 
 clean:
-							$(MAKE) -C $(MLIBX_PATH) clean
-							$(MAKE) -C $(LIBFT_PATH) clean
+							$(MAKE) -C ./minilibx clean
+							$(MAKE) -C ./libft clean
 							$(RM) $(OBJS_DIR)
 
 fclean:				clean
@@ -65,6 +61,4 @@ fclean:				clean
 
 re:				fclean all
 
-
-.PHONY: clean fclean re init
-			
+.PHONY:	all clean fclean re
