@@ -6,7 +6,7 @@
 /*   By: wwallas- <wwallas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 18:23:54 by wwallas-          #+#    #+#             */
-/*   Updated: 2022/07/28 00:08:58 by wwallas-         ###   ########.fr       */
+/*   Updated: 2022/08/08 16:16:58 by wwallas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ void	atualize_portal(t_data *data)
 
 void	start_end_game(t_data *data)
 {
-	static int	i = 0;
 	int			x;
 	int			y;
 	int			index;

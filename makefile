@@ -6,7 +6,7 @@
 #    By: wwallas- <wwallas-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/19 21:38:45 by wwallas-          #+#    #+#              #
-#    Updated: 2022/07/25 16:13:09 by wwallas-         ###   ########.fr        #
+#    Updated: 2022/08/08 16:15:43 by wwallas-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ OBJS_DIR			=	objetos
 OBJS				=	$(patsubst %.c,objetos/%.o, $(SOURCS))
 
 CC					=	cc
-CFLAGS				=	-g3 -fPIE
+CFLAGS				=	-Wall -Werror -Wextra -fPIE
 
 MFLAGS				=	-fPIE -Imlx_linux -lXext -lX11 -lm -lz -o
 
