@@ -6,7 +6,7 @@
 /*   By: wwallas- <wwallas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 00:28:19 by wwallas-          #+#    #+#             */
-/*   Updated: 2022/07/26 23:13:29 by wwallas-         ###   ########.fr       */
+/*   Updated: 2022/08/08 17:44:05 by wwallas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ static void	up(t_data *data)
 	y = data->localization[1];
 	if (data->map[y - 1][x] != '1')
 	{
-		if (data->map[y - 1][x] == 'A')
-			close_game(data);
 		if (data->map[y - 1][x] == 'C')
 			data->itens.collectible--;
 		data->map[y][x] = '0';
@@ -43,8 +41,6 @@ static void	left(t_data *data)
 	y = data->localization[1];
 	if (data->map[y][x - 1] != '1')
 	{
-		if (data->map[y][x - 1] == 'A')
-			close_game(data);
 		if (data->map[y][x - 1] == 'C')
 			data->itens.collectible--;
 		data->map[y][x] = '0';
@@ -66,8 +62,6 @@ static void	down(t_data *data)
 	y = data->localization[1];
 	if (data->map[y + 1][x] != '1')
 	{
-		if (data->map[y + 1][x] == 'A')
-			close_game(data);
 		if (data->map[y + 1][x] == 'C')
 			data->itens.collectible--;
 		data->map[y][x] = '0';
@@ -88,8 +82,6 @@ static void	right(t_data *data)
 	y = data->localization[1];
 	if (data->map[y][x + 1] != '1')
 	{
-		if (data->map[y][x + 1] == 'A')
-			close_game(data);
 		if (data->map[y][x + 1] == 'C')
 			data->itens.collectible--;
 		data->map[y][x] = '0';

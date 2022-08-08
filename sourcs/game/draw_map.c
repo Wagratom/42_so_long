@@ -6,7 +6,7 @@
 /*   By: wwallas- <wwallas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 15:56:07 by wwallas-          #+#    #+#             */
-/*   Updated: 2022/07/28 00:33:23 by wwallas-         ###   ########.fr       */
+/*   Updated: 2022/08/08 17:47:46 by wwallas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ int	draw_map(t_data *data)
 		x = -1;
 		while (data->map[y][++x])
 		{
+			verific_dead(data);
 			if (data->map[y][x] == '1')
 				put_img(data, data->wall, x * 44, y * 58);
 			else if (data->map[y][x] == 'C')

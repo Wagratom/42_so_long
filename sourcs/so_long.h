@@ -6,7 +6,7 @@
 /*   By: wwallas- <wwallas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 23:25:37 by wwallas-          #+#    #+#             */
-/*   Updated: 2022/07/28 00:06:42 by wwallas-         ###   ########.fr       */
+/*   Updated: 2022/08/08 17:41:57 by wwallas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,6 +121,8 @@ void	data_init(t_data *data);
 int		draw_map_time(t_data *data);
 
 int		draw_map(t_data *data);
+
+void	verific_dead(t_data *data);
 
 int		filter_key(int key, t_data *data);
 
