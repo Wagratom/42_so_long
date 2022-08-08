@@ -6,10 +6,11 @@
 #    By: wwallas- <wwallas-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/19 21:38:45 by wwallas-          #+#    #+#              #
-#    Updated: 2022/08/08 18:09:17 by wwallas-         ###   ########.fr        #
+#    Updated: 2022/08/08 18:12:10 by wwallas-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+LIBFT				=	./libft/libft.a
 MLIBX				=	./minilibx/libmlx_Linux.a
 
 INCLUDES			=	-I. -Imlx_linux -O3
