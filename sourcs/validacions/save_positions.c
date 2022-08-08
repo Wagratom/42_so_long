@@ -6,7 +6,7 @@
 /*   By: wwallas- <wwallas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 06:38:04 by wwallas-          #+#    #+#             */
-/*   Updated: 2022/07/26 23:15:46 by wwallas-         ###   ########.fr       */
+/*   Updated: 2022/08/08 20:42:37 by wwallas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,16 @@ static int	save_exit(t_data *data, int x, int y)
 static int	save_enemy(t_data *data, int x, int y)
 {
 	static int	index = 0;
+	static int	direcion = 1;
 
+	if (direcion == 3)
+		direcion = 0;
 	data->enemies[index] = (int *)malloc(sizeof(int) * 3);
 	data->enemies[index][0] = x;
 	data->enemies[index][1] = y;
-	data->enemies[index][2] = 0;
+	data->enemies[index][2] = direcion;
 	data->map[y][x] = '0';
+	direcion++;
 	return (++index);
 }
 

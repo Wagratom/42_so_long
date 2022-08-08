@@ -6,7 +6,7 @@
 /*   By: wwallas- <wwallas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 04:31:03 by wwallas-          #+#    #+#             */
-/*   Updated: 2022/07/27 19:59:10 by wwallas-         ###   ########.fr       */
+/*   Updated: 2022/08/08 21:14:02 by wwallas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ static int	valid_colun(char **map, int x, int y)
 		if (map[0][i] != '1' || i > 26)
 		{
 			if (map[0][i] != '1')
-				write(1, "Erro: fist colun invalid\n", 26);
+				write(1, "Error: fist colun invalid\n", 27);
 			else
-				write(1, "invalid size map\n", 17);
+				write(1, "Error: invalid map width\n", 26);
 			return (del_map(map));
 		}
 	}
@@ -35,7 +35,7 @@ static int	valid_colun(char **map, int x, int y)
 	{
 		if (map[y][i] != '1')
 		{
-			write(1, "Erro: last colun invalid\n", 26);
+			write(1, "Error: last colun invalid\n", 27);
 			return (del_map(map));
 		}
 	}
@@ -49,12 +49,12 @@ static int	valid_line(char **map, int x, int y)
 	i = -1;
 	while (i++ < y && map[i][0])
 	{
-		if (map[i][0] != '1' || i > 9)
+		if (map[i][0] != '1' || i > 10)
 		{
 			if (map[i][0] != '1')
-				write(1, "Erro: fist line invalid\n", 24);
+				write(1, "Error: fist line invalid\n", 25);
 			else
-				write(1, "invalid size map\n", 17);
+				write(1, "Error: invalid map height\n", 26);
 			return (del_map(map));
 		}
 	}
@@ -63,7 +63,7 @@ static int	valid_line(char **map, int x, int y)
 	{
 		if (map[i][x] != '1')
 		{
-			write(1, "Erro:	last line invalid\n", 24);
+			write(1, "Error: last line invalid\n", 25);
 			return (del_map(map));
 		}
 	}
@@ -82,9 +82,7 @@ int	creat_map(int fd, t_data *data)
 	x = data->itens.size_x - 1;
 	y = data->itens.size_y - 1;
 	creat_map_aux(fd, data);
-	if (valid_colun(data->map, x, y))
-		return (write(1, "Error creat map\n", 16));
-	if (valid_line(data->map, x, y))
+	if (valid_colun(data->map, x, y) || valid_line(data->map, x, y))
 		return (write(1, "Error creat map\n", 16));
 	close(fd);
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: wwallas- <wwallas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 18:23:54 by wwallas-          #+#    #+#             */
-/*   Updated: 2022/08/08 16:16:58 by wwallas-         ###   ########.fr       */
+/*   Updated: 2022/08/08 22:59:17 by wwallas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	animacion_end(t_data *data, int x, int y)
 	if (time == 0)
 	{
 		i = 0;
+		mlx_put_image_to_window(data->mlx, data->win, data->background, 0, 0);
 		while (i++ <= 100000)
 			mlx_put_image_to_window(data->mlx, data->win, data->end, x, y);
 	}
@@ -66,7 +67,7 @@ void	verif_end(t_data *data)
 	int	index;
 
 	index = -1;
-	animacion_end(data, data->itens.size_x * 14, data->itens.size_y * 20);
+	animacion_end(data, data->itens.size_x * 20, data->itens.size_y * 14);
 	while (data->exits[++index])
 	{
 		if (data->exits[index][0] == data->localization[0] &&
