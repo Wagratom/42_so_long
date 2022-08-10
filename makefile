@@ -6,7 +6,7 @@
 #    By: wwallas- <wwallas-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/19 21:38:45 by wwallas-          #+#    #+#              #
-#    Updated: 2022/08/08 18:12:10 by wwallas-         ###   ########.fr        #
+#    Updated: 2022/08/10 21:14:39 by wwallas-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,25 +41,27 @@ $(OBJS_DIR)/%.o:	%.c
 
 all:				$(NAME)
 
-$(NAME):			init $(OBJS_DIR) $(OBJS)
-							$(CC) $(CFLAGS) $(OBJS) $(LIBFT) $(MLIBX) $(MFLAGS) $@
+$(NAME):			$(OBJS_DIR) $(OBJS)
+						make init			
+						$(CC) $(CFLAGS) $(OBJS) $(LIBFT) $(MLIBX) $(MFLAGS) $@
 
 $(OBJS_DIR):
-							mkdir -p $@
+						mkdir -p $@
 
 init:
-							$(MAKE) -C ./minilibx
-							$(MAKE) -C ./libft
+						$(MAKE) -C ./minilibx
+						$(MAKE) -C ./libft
 
 clean:
-							$(MAKE) -C ./minilibx clean
-							$(MAKE) -C ./libft clean
-							$(RM) $(OBJS_DIR)
+						$(MAKE) -C ./minilibx clean
+						$(MAKE) -C ./libft clean
+						$(RM) $(OBJS_DIR)
 
 fclean:				clean
-							$(RM) $(LIBFT)
-							$(RM) $(NAME)
-
+						$(RM) $(LIBFT)
+						$(RM) $(NAME)
+run:				all
+						./so_long ./maps/map2.ber
 re:				fclean all
 
-.PHONY:	all clean fclean re
+.PHONY:	all clean fclean re init
