@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   atualize_host.c                                    :+:      :+:    :+:   */
+/*   update_host.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wwallas- <wwallas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 20:49:35 by wwallas-          #+#    #+#             */
-/*   Updated: 2022/08/08 21:47:26 by wwallas-         ###   ########.fr       */
+/*   Updated: 2022/08/10 21:19:33 by wwallas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ void	move_left(t_data *data, int index)
 		data->enemies[index][2] = 1;
 }
 
-void	atualize_host(t_data *data)
+void	update_host(t_data *data)
 {
 	int	y;
 

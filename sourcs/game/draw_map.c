@@ -6,7 +6,7 @@
 /*   By: wwallas- <wwallas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 15:56:07 by wwallas-          #+#    #+#             */
-/*   Updated: 2022/08/08 17:47:46 by wwallas-         ###   ########.fr       */
+/*   Updated: 2022/08/10 21:21:29 by wwallas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ int	draw_map_time(t_data *data)
 		draw_movies(data);
 		if (j > 1)
 		{
-			atualize_portal(data);
-			atualize_host(data);
+			update_portal(data);
+			update_host(data);
 			draw_map(data);
 			draw_movies(data);
 			j = 0;

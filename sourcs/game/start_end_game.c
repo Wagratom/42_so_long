@@ -6,7 +6,7 @@
 /*   By: wwallas- <wwallas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 18:23:54 by wwallas-          #+#    #+#             */
-/*   Updated: 2022/08/08 22:59:17 by wwallas-         ###   ########.fr       */
+/*   Updated: 2022/08/10 21:24:53 by wwallas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	animacion_end(t_data *data, int x, int y)
 	time++;
 }
 
-void	atualize_portal(t_data *data)
+void	update_portal(t_data *data)
 {
 	int	index;
 
