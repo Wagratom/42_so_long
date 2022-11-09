@@ -6,7 +6,7 @@
 /*   By: wwallas- <wwallas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 01:29:14 by wwallas-          #+#    #+#             */
-/*   Updated: 2022/07/26 22:59:38 by wwallas-         ###   ########.fr       */
+/*   Updated: 2022/11/09 16:57:08 by wwallas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,11 @@ static void	init_itens(t_itens *itens)
 static int	valid_itens(t_itens	*itens)
 {
 	if (itens->collectible == 0)
-		return (write(1, "invalid numb of collectible\n", 26));
+		return (write(2, "invalid numb of collectible\n", 26));
 	else if (itens->exit == 0)
-		return (write(1, "the map not has exit\n", 22));
+		return (write(2, "the map not has exit\n", 22));
 	else if (itens->position == 0)
-		return (write(1, "the map does not have a starting position\n", 44));
+		return (write(2, "the map does not have a starting position\n", 43));
 	return (0);
 }
 
@@ -87,7 +87,7 @@ static int	verific_items(t_itens *itens, char c)
 	{
 		itens->position += 1;
 		if (itens->position > 1)
-			return (write(1, "Error: there are two starting position\n", 42));
+			return (write(2, "Error: there are two starting position\n", 39));
 	}
 	else if (c == 'C')
 		itens->collectible += 1;
